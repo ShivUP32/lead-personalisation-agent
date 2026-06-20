@@ -108,7 +108,7 @@ def build_pdf():
     pdf.ln(5)
     pdf.set_text_color(*SECONDARY)
     pdf.set_font("Helvetica", "B", 14)
-    pdf.cell(0, 8, "Sequential Multi-Agent Pipeline utilizing google-antigravity SDK", new_x="LMARGIN", new_y="NEXT")
+    pdf.cell(0, 8, "Sequential Multi-Agent Pipeline utilizing FastAPI and Python", new_x="LMARGIN", new_y="NEXT")
     
     # Colored Divider
     pdf.ln(4)
@@ -147,7 +147,7 @@ def build_pdf():
     pdf.cell(45, 5, "Core Engine SDK:")
     pdf.set_font("Helvetica", "", 9)
     pdf.set_text_color(*TEXT_DARK)
-    pdf.cell(0, 5, "Google Antigravity Python SDK & FastAPI", new_x="LMARGIN", new_y="NEXT")
+    pdf.cell(0, 5, "FastAPI & Asynchronous Python", new_x="LMARGIN", new_y="NEXT")
     
     pdf.set_font("Helvetica", "B", 9)
     pdf.set_text_color(*PRIMARY)
@@ -187,7 +187,7 @@ def build_pdf():
     pdf.chapter_title("The 7-Stage Personalization Pipeline", "2")
     
     pdf.paragraph(
-        "The system utilizes the Google Antigravity SDK to segment different cognitive tasks "
+        "The system utilizes a sequential multi-stage architecture to segment different cognitive tasks "
         "into sequential agent actions, passing validated context downstream.",
         style=""
     )
@@ -218,7 +218,7 @@ def build_pdf():
     pdf.paragraph("Major Architectural Components:", style="B", size=11)
     
     pdf.bullet("Backend Framework", "FastAPI serves as the asynchronous backend, facilitating easy local running and Vercel routing.")
-    pdf.bullet("Agent Framework", "google-antigravity Python SDK drives the model completions, using Pydantic response schemas for deterministic structured output.")
+    pdf.bullet("Agent Framework", "Asynchronous Python logic drives the model completions, using Pydantic response schemas for deterministic structured output.")
     pdf.bullet("Web Search Layer", "Jina Search (s.jina.ai) and Reader (r.jina.ai) handle public crawling for free without SerpAPI keys.")
     pdf.bullet("Storage Layer", "A local db.json file acts as the database for runs, history logs, and deduplication indexes, avoiding Supabase costs.")
     
