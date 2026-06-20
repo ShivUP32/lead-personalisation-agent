@@ -390,7 +390,7 @@
       "completed_at": "2026-06-19T22:38:40.144082"
     },
     {
-      "id": "36627ec7-b8e1-4fa4-bd12-bc793549dd2a",
+      "id": "a4d9cedd-9f5a-4368-ada2-d687dd4ba261",
       "run_date": "2026-06-20",
       "trigger": "manual",
       "status": "partial_failure",
@@ -401,32 +401,32 @@
           "durationMs": 0,
           "status": "running",
           "details": "Searching LinkedIn Sales Navigator for prospects",
-          "timestamp": "2026-06-20T09:19:52.560578"
+          "timestamp": "2026-06-20T09:27:02.069321"
         },
         {
           "stage": "STAGE 01",
-          "durationMs": 32194.12,
+          "durationMs": 32643.819,
           "status": "done",
           "details": "Found 8 candidates (0 duplicates filtered)",
-          "timestamp": "2026-06-20T09:20:24.754704"
+          "timestamp": "2026-06-20T09:27:34.713159"
         },
         {
           "stage": "STAGE 02",
           "durationMs": 0,
           "status": "running",
           "details": "Scoring and ranking 8 candidates",
-          "timestamp": "2026-06-20T09:20:24.754712"
+          "timestamp": "2026-06-20T09:27:34.713189"
         },
         {
           "stage": "STAGE 02",
-          "durationMs": 16507.882999999998,
+          "durationMs": 4837.5019999999995,
           "status": "done",
           "details": "Scored all. Selected top 0 prospects.",
-          "timestamp": "2026-06-20T09:20:41.262621"
+          "timestamp": "2026-06-20T09:27:39.550702"
         }
       ],
-      "started_at": "2026-06-20T09:19:52.560569",
-      "completed_at": "2026-06-20T09:20:41.262662"
+      "started_at": "2026-06-20T09:27:02.069314",
+      "completed_at": "2026-06-20T09:27:39.550725"
     }
   ],
   "prospects": [
