@@ -67,14 +67,23 @@ class WorkflowPDF(FPDF):
         self.ln(2.5)
 
     def bullet(self, title, desc, bullet_char="-"):
+        # Print bullet and title
+        self.set_left_margin(20)
+        self.set_x(20)
         self.set_text_color(*PRIMARY)
         self.set_font("Helvetica", "B", 10)
         self.cell(6, 5, f" {bullet_char} ")
-        self.cell(50, 5, f"{title}:")
+        self.cell(0, 5, f"{title}:", new_x="LMARGIN", new_y="NEXT")
         
+        # Print description with left indent
+        self.set_left_margin(26)
+        self.set_x(26)
         self.set_text_color(*TEXT_DARK)
         self.set_font("Helvetica", "", 10)
-        self.multi_cell(0, 5, desc, new_x="LMARGIN", new_y="NEXT")
+        self.multi_cell(0, 4.5, desc, new_x="LMARGIN", new_y="NEXT")
+        
+        # Restore left margin
+        self.set_left_margin(20)
         self.ln(1.5)
 
 def build_pdf():
