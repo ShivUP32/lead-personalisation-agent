@@ -1,0 +1,12 @@
+.DS_Store
+.env
+.env.local
+.env.local.txt
+__pycache__/
+*.pyc
+api/__pycache__/
+.ipynb_checkpoints/
+.vscode/
+.idea/
+node_modules/
+dist/

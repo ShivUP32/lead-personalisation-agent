@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lead Personalization Console — VoiceCare AI</title>
+  <meta name="description" content="A compliant, multi-stage AI lead personalization engine: prospect scoring, Jina-based signal extraction, use-case matching, and safety-audited outreach drafting." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=1.6" />
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">●</span>
+      <span class="brand-name">Lead Personalization Agent</span>
+      <span class="version-badge" id="version-badge">v1.0.0-dev</span>
+    </div>
+    <p class="brand-tagline">Sequential Multi-Agent Pipeline for compliant GTM research & outreach drafting.</p>
+  </header>
+
+  <!-- Canvas Viewport -->
+  <div class="canvas-viewport" id="canvas-viewport">
+    
+    <!-- Pannable/Zoomable Canvas Container -->
+    <div class="canvas-container" id="canvas-container">
+      
+      <!-- SVG Overlay for Connecting Wires -->
+      <svg class="canvas-svg" id="canvas-svg"></svg>
+
+      <!-- 1. Input Node: Campaign Cockpit (Left) -->
+      <section class="canvas-node control-node" id="node-control" style="left: 50px; top: 100px; width: 380px;">
+        <div class="node-header">
+          <h2 class="eyebrow">CAMPAIGN CONTROL CENTER</h2>
+          <h3 class="panel-title">Outreach Assistant</h3>
+          <p class="panel-subtitle">Find prospects, research their companies, and automatically write personalized drafts.</p>
+        </div>
+
+        <div class="pipeline-actions">
+          <button id="run-pipeline-btn" class="btn btn-primary">Start Outreach Agent</button>
+          <button id="view-logs-btn" class="btn">View Progress Details</button>
+        </div>
+
+        <div class="field-grid" style="margin-top: 14px; border-top: 1px solid var(--border); padding-top: 12px; margin-bottom: 12px;">
+          <label class="field">
+            <span>Security Passcode (If required)</span>
+            <input type="password" id="f-cronSecret" placeholder="Enter your workspace passcode if set" />
+          </label>
+        </div>
+
+        <!-- Manual Input Accordion -->
+        <details class="manual-input-accordion">
+          <summary>Add Specific Leads (Optional)</summary>
+          <div class="field-grid">
+            <label class="field">
+              <span>Paste LinkedIn Profiles (One URL per line)</span>
+              <textarea id="f-linkedinUrls" placeholder="https://linkedin.com/in/johndoe-rcm"></textarea>
+            </label>
+            <label class="field">
+              <span>Paste Spreadsheet Data (CSV format)</span>
+              <textarea id="f-csv" placeholder="Name,Company,Title,Website&#10;Jordan Lee,Summit Health Group,Director of RCM,summithealthgroup.com"></textarea>
+            </label>
+          </div>
+        </details>
+
+        <!-- Automated Scheduler Accordion -->
+        <details class="manual-input-accordion" id="scheduler-accordion" open>
+          <summary style="display: flex; align-items: center; justify-content: space-between; cursor: pointer; user-select: none;">
+            <span style="font-weight: 600;">Automated Outreach Scheduler (Optional)</span>
+            <span style="font-size: 0.65rem; background: rgba(38, 166, 154, 0.2); color: var(--accent); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); letter-spacing: 0.05em; font-weight: 700; border: 1px solid rgba(38, 166, 154, 0.3);">AUTO RUN</span>
+          </summary>
+          <div class="field-grid" style="margin-top: 10px;">
+            <label class="checkbox-field" style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; cursor: pointer; user-select: none;">
+              <input type="checkbox" id="sched-enabled" style="width: auto; margin: 0; cursor: pointer;" />
+              <span style="font-weight: 500;">Enable Automated Run</span>
+            </label>
+            <label class="field">
+              <span>Run Frequency</span>
+              <select id="sched-frequency" style="width: 100%; padding: 8px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); color: var(--ink);">
+                <option value="daily">Daily</option>
+                <option value="alternate">Alternate Days</option>
+                <option value="weekly">Weekly</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Preferred Run Time (UTC)</span>
+              <input type="time" id="sched-time" value="09:00" style="width: 100%; padding: 8px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); color: var(--ink);" />
+            </label>
+            <label class="field">
+              <span>Notification Email</span>
+              <input type="email" id="sched-email" value="shivamsingh0013@gmail.com" placeholder="enter-your-email@example.com" style="width: 100%; padding: 8px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); color: var(--ink);" />
+            </label>
+            <button id="save-schedule-btn" class="btn btn-small btn-primary" style="margin-top: 8px; width: 100%;">Save Schedule Settings</button>
+          </div>
+        </details>
+
+        <div class="run-metadata">
+          <div>LAST RUN: <span id="meta-last-run">Never</span></div>
+          <div>LAUNCH MODE: <span id="meta-mode">Manual (On-Demand)</span></div>
+        </div>
+
+        <!-- Output Port -->
+        <div class="port port-out" data-port="control-out" title="Control Output"></div>
+      </section>
+
+      <!-- 2. Pipeline Status Chain Node (Middle Top) -->
+      <section class="canvas-node pipeline-node" id="node-pipeline" style="left: 490px; top: 100px; width: 850px;">
+        <!-- Input Port -->
+        <div class="port port-in" data-port="pipeline-in" title="Pipeline Input"></div>
+
+        <div class="node-header">
+          <h2 class="eyebrow">RESEARCH & WRITING STAGES</h2>
+          <h3 class="panel-title">Outreach Pipeline Status</h3>
+          <p class="panel-subtitle">Track the agent's progress as it researches leads and drafts personalized emails.</p>
+        </div>
+
+        <!-- Stages Chain -->
+        <div class="stages-chain">
+          <div class="stage-step" id="step-01" data-stage="STAGE 01">
+            <span class="stage-dot"></span>
+            <span class="stage-label">1. Discover</span>
+          </div>
+          <div class="stage-step" id="step-02" data-stage="STAGE 02">
+            <span class="stage-dot"></span>
+            <span class="stage-label">2. Qualify</span>
+          </div>
+          <div class="stage-step" id="step-03" data-stage="STAGE 03">
+            <span class="stage-dot"></span>
+            <span class="stage-label">3. Research</span>
+          </div>
+          <div class="stage-step" id="step-04" data-stage="STAGE 04">
+            <span class="stage-dot"></span>
+            <span class="stage-label">4. Signals</span>
+          </div>
+          <div class="stage-step" id="step-05" data-stage="STAGE 05">
+            <span class="stage-dot"></span>
+            <span class="stage-label">5. Solutions</span>
+          </div>
+          <div class="stage-step" id="step-06" data-stage="STAGE 06">
+            <span class="stage-dot"></span>
+            <span class="stage-label">6. Outreach</span>
+          </div>
+          <div class="stage-step" id="step-07" data-stage="STAGE 07">
+            <span class="stage-dot"></span>
+            <span class="stage-label">7. Quality</span>
+          </div>
+        </div>
+
+        <!-- Output Port -->
+        <div class="port port-out" data-port="pipeline-out" title="Pipeline Output"></div>
+      </section>
+
+      <!-- 3. Prospects Grid Area -->
+      <div id="prospects-canvas-area">
+        <!-- Render 5 prospect nodes dynamically by app.js -->
+      </div>
+
+      <!-- 4. Daily Pack Actions Node (Right Bottom) -->
+      <section class="canvas-node pack-node" id="node-pack" style="left: 1400px; top: 100px; width: 380px;">
+        <!-- Input Port -->
+        <div class="port port-in" data-port="pack-in" title="Consolidated Prospects"></div>
+
+        <div class="node-header">
+          <h2 class="eyebrow">DOWNLOAD CENTER</h2>
+          <h3 class="panel-title">Outreach Campaign Pack</h3>
+          <p class="panel-subtitle">Download completed research and personalized email drafts.</p>
+        </div>
+
+        <div class="pack-status" id="pack-summary-text">
+          No personalized drafts generated yet. Start the agent to create your campaign pack.
+        </div>
+
+        <div class="pack-actions">
+          <button id="copy-pack-btn" class="btn btn-small" disabled>Copy All Drafts</button>
+          <button id="download-pack-btn" class="btn btn-primary btn-small" disabled>Download Campaign File</button>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Canvas Controls -->
+    <div class="canvas-controls">
+      <button class="ctrl-btn" id="ctrl-zoom-in" title="Zoom In">+</button>
+      <button class="ctrl-btn" id="ctrl-zoom-out" title="Zoom Out">-</button>
+      <button class="ctrl-btn" id="ctrl-zoom-reset" title="Reset View">⟲</button>
+      <button class="ctrl-btn" id="ctrl-zoom-fit" title="Fit to Workspace">[]</button>
+    </div>
+
+  </div>
+
+  <!-- Run Log Monospace Panel Drawer (Bottom Collapsed) -->
+  <div class="log-panel" id="log-panel">
+    <div class="log-header">
+      <h4>System Execution Log</h4>
+      <button id="close-logs-btn">&times;</button>
+    </div>
+    <pre class="log-output" id="log-output">Idle. Waiting for run...</pre>
+  </div>
+
+  <!-- Output Console Drawer (Slide-out Right) -->
+  <button class="floating-drawer-toggle" id="floating-drawer-toggle" title="Open Output Console">
+    <span class="toggle-icon">📊</span>
+    <span class="toggle-text">Output Console</span>
+  </button>
+
+  <div class="output-drawer" id="output-drawer">
+    <div class="drawer-header">
+      <div class="drawer-title-block">
+        <span class="drawer-eyebrow">PROSPECT ANALYSIS</span>
+        <h2 id="drawer-title">Jordan Lee</h2>
+        <p id="drawer-subtitle">Summit Health Group</p>
+      </div>
+      <div class="drawer-nav-pills" id="drawer-nav-pills" role="navigation" aria-label="Prospect navigation"></div>
+      <button class="drawer-close" id="drawer-close-btn" aria-label="Close Inspector">&times;</button>
+    </div>
+
+    <div class="drawer-body" id="drawer-body">
+      <!-- Injected by app.js -->
+    </div>
+
+    <div class="drawer-footer">
+      <button class="btn btn-small" id="drawer-copy-btn">Copy Dossier</button>
+      <button class="btn btn-primary btn-small" id="drawer-download-btn">Download .md</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>
+      No LinkedIn automation. No scraping. Drafts only. Human review required before sending.
+      <a href="Lead%20Personlisation%20Agent/PRD.md" target="_blank">PRD</a> · 
+      <a href="Lead%20Personlisation%20Agent/DESIGN.md" target="_blank">Design</a> · 
+      <a href="Lead%20Personlisation%20Agent/AGENT_FLOWS.md" target="_blank">Agent flows</a> · 
+      <a href="lead_personalisation_workflow.pdf" target="_blank">Download PDF Architecture</a>
+    </p>
+  </footer>
+
+  <script src="app.js?v=2.0" defer></script>
+</body>
+</html>

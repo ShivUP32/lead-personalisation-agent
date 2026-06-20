@@ -1,0 +1,17 @@
+{
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/main.py" },
+    { "source": "/(.*)", "destination": "/static/$1" }
+  ],
+  "functions": {
+    "api/main.py": {
+      "maxDuration": 60
+    }
+  },
+  "crons": [
+    {
+      "path": "/api/cron-run",
+      "schedule": "0 * * * *"
+    }
+  ]
+}

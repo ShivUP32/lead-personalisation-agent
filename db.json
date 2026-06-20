@@ -1,0 +1,667 @@
+{
+  "runs": [
+    {
+      "id": "3c8bf79d-d84c-46e9-9936-bdbe4aaa3bd9",
+      "run_date": "2026-06-19",
+      "trigger": "manual",
+      "status": "success",
+      "prospects_surfaced": 5,
+      "stage_log": [
+        {
+          "stage": "STAGE 01",
+          "durationMs": 0,
+          "status": "running",
+          "details": "Searching public sources for prospects",
+          "timestamp": "2026-06-19T22:38:05.665255"
+        },
+        {
+          "stage": "STAGE 01",
+          "durationMs": 4072.977,
+          "status": "done",
+          "details": "Found 8 candidates (0 duplicates filtered)",
+          "timestamp": "2026-06-19T22:38:09.738238"
+        },
+        {
+          "stage": "STAGE 02",
+          "durationMs": 0,
+          "status": "running",
+          "details": "Scoring and ranking 8 candidates",
+          "timestamp": "2026-06-19T22:38:09.738249"
+        },
+        {
+          "stage": "STAGE 02",
+          "durationMs": 956.314,
+          "status": "done",
+          "details": "Scored all. Selected top 5 prospects.",
+          "timestamp": "2026-06-19T22:38:10.694572"
+        },
+        {
+          "stage": "STAGE 03",
+          "durationMs": 0,
+          "status": "running",
+          "details": "Enriching research on Jordan Lee (Summit Health Group)",
+          "timestamp": "2026-06-19T22:38:10.694589"
+        },
+        {
+          "stage": "STAGE 03",
+          "durationMs": 3617.394,
+          "status": "done",
+          "details": "Research complete for Jordan Lee.",
+          "timestamp": "2026-06-19T22:38:14.311999"
+        },
+        {
+          "stage": "STAGE 04",
+          "durationMs": 0,
+          "status": "running",
+          "details": "Extracting signal for Jordan Lee",
+          "timestamp": "2026-06-19T22:38:14.312006"
+        },
+        {
+          "stage": "STAGE 04",
+          "durationMs": 370.56899999999996,
+          "status": "done",
+          "details": "Signal extracted: Appointed to lead the patient operations restructure program.",
+          "timestamp": "2026-06-19T22:38:14.682586"
+        },
+        {
+          "stage": "STAGE 05",
+          "durationMs": 0,
+          "status": "running",
+          "details": "Mapping use-case for Jordan Lee",
+          "timestamp": "2026-06-19T22:38:14.682595"
+        },
+        {
+          "stage": "STAGE 05",
+          "durationMs": 672.427,
+          "status": "done",
+          "details": "Matched primary use case: automating eligibility verification",
+          "timestamp": "2026-06-19T22:38:15.355035"
+        },
+        {
+          "stage": "STAGE 03",
+          "durationMs": 0,
+          "status": "running",
+          "details": "Enriching research on Sarah Connor (Metropolitan Patient Access)",
+          "timestamp": "2026-06-19T22:38:15.355092"
+        },
+        {
+          "stage": "STAGE 03",
+          "durationMs": 3671.697,
+          "status": "done",
+          "details": "Research complete for Sarah Connor.",
+          "timestamp": "2026-06-19T22:38:19.026805"
+        },
+        {
+          "stage": "STAGE 04",
+          "durationMs": 0,
+          "status": "running",
+          "details": "Extracting signal for Sarah Connor",
+          "timestamp": "2026-06-19T22:38:19.026817"
+        },
+        {
+          "stage": "STAGE 04",
+          "durationMs": 924.0509999999999,
+          "status": "done",
+          "details": "Signal extracted: Appointed to lead the patient operations restructure program.",
+          "timestamp": "2026-06-19T22:38:19.950877"
+        },
+        {
+          "stage": "STAGE 05",
+          "durationMs": 0,
+          "status": "running",
+          "details": "Mapping use-case for Sarah Connor",
+          "timestamp": "2026-06-19T22:38:19.950884"
+        },
+        {
+          "stage": "STAGE 05",
+          "durationMs": 532.2170000000001,
+          "status": "done",
+          "details": "Matched primary use case: automating eligibility verification",
+          "timestamp": "2026-06-19T22:38:20.483113"
+        },
+        {
+          "stage": "STAGE 03",
+          "durationMs": 0,
+          "status": "running",
+          "details": "Enriching research on Robert Vance (Vance Healthcare Solutions)",
+          "timestamp": "2026-06-19T22:38:20.483138"
+        },
+        {
+          "stage": "STAGE 03",
+          "durationMs": 4709.978,
+          "status": "done",
+          "details": "Research complete for Robert Vance.",
+          "timestamp": "2026-06-19T22:38:25.193129"
+        },
+        {
+          "stage": "STAGE 04",
+          "durationMs": 0,
+          "status": "running",
+          "details": "Extracting signal for Robert Vance",
+          "timestamp": "2026-06-19T22:38:25.193138"
+        },
+        {
+          "stage": "STAGE 04",
+          "durationMs": 874.695,
+          "status": "done",
+          "details": "Signal extracted: Appointed to lead the patient operations restructure program.",
+          "timestamp": "2026-06-19T22:38:26.067841"
+        },
+        {
+          "stage": "STAGE 05",
+          "durationMs": 0,
+          "status": "running",
+          "details": "Mapping use-case for Robert Vance",
+          "timestamp": "2026-06-19T22:38:26.067846"
+        },
+        {
+          "stage": "STAGE 05",
+          "durationMs": 374.279,
+          "status": "done",
+          "details": "Matched primary use case: automating eligibility verification",
+          "timestamp": "2026-06-19T22:38:26.442137"
+        },
+        {
+          "stage": "STAGE 03",
+          "durationMs": 0,
+          "status": "running",
+          "details": "Enriching research on Elena Rostova (St. Jude Clinic)",
+          "timestamp": "2026-06-19T22:38:26.442169"
+        },
+        {
+          "stage": "STAGE 03",
+          "durationMs": 3157.913,
+          "status": "done",
+          "details": "Research complete for Elena Rostova.",
+          "timestamp": "2026-06-19T22:38:29.600097"
+        },
+        {
+          "stage": "STAGE 04",
+          "durationMs": 0,
+          "status": "running",
+          "details": "Extracting signal for Elena Rostova",
+          "timestamp": "2026-06-19T22:38:29.600106"
+        },
+        {
+          "stage": "STAGE 04",
+          "durationMs": 302.27799999999996,
+          "status": "done",
+          "details": "Signal extracted: Appointed to lead the patient operations restructure program.",
+          "timestamp": "2026-06-19T22:38:29.902392"
+        },
+        {
+          "stage": "STAGE 05",
+          "durationMs": 0,
+          "status": "running",
+          "details": "Mapping use-case for Elena Rostova",
+          "timestamp": "2026-06-19T22:38:29.902399"
+        },
+        {
+          "stage": "STAGE 05",
+          "durationMs": 299.753,
+          "status": "done",
+          "details": "Matched primary use case: automating eligibility verification",
+          "timestamp": "2026-06-19T22:38:30.202164"
+        },
+        {
+          "stage": "STAGE 03",
+          "durationMs": 0,
+          "status": "running",
+          "details": "Enriching research on Marcus Aurelius (Roma Health Alliance)",
+          "timestamp": "2026-06-19T22:38:30.202190"
+        },
+        {
+          "stage": "STAGE 03",
+          "durationMs": 3619.8419999999996,
+          "status": "done",
+          "details": "Research complete for Marcus Aurelius.",
+          "timestamp": "2026-06-19T22:38:33.822047"
+        },
+        {
+          "stage": "STAGE 04",
+          "durationMs": 0,
+          "status": "running",
+          "details": "Extracting signal for Marcus Aurelius",
+          "timestamp": "2026-06-19T22:38:33.822057"
+        },
+        {
+          "stage": "STAGE 04",
+          "durationMs": 687.213,
+          "status": "done",
+          "details": "Signal extracted: Appointed to lead the patient operations restructure program.",
+          "timestamp": "2026-06-19T22:38:34.509277"
+        },
+        {
+          "stage": "STAGE 05",
+          "durationMs": 0,
+          "status": "running",
+          "details": "Mapping use-case for Marcus Aurelius",
+          "timestamp": "2026-06-19T22:38:34.509281"
+        },
+        {
+          "stage": "STAGE 05",
+          "durationMs": 297.77500000000003,
+          "status": "done",
+          "details": "Matched primary use case: automating eligibility verification",
+          "timestamp": "2026-06-19T22:38:34.807072"
+        },
+        {
+          "stage": "STAGE 06",
+          "durationMs": 0,
+          "status": "running",
+          "details": "Drafting outreach messages for Jordan Lee",
+          "timestamp": "2026-06-19T22:38:34.807092"
+        },
+        {
+          "stage": "STAGE 07",
+          "durationMs": 0,
+          "status": "running",
+          "details": "Safety and compliance audit for Jordan Lee (attempt 1)",
+          "timestamp": "2026-06-19T22:38:35.431381"
+        },
+        {
+          "stage": "STAGE 07",
+          "durationMs": 301.22700000000003,
+          "status": "done",
+          "details": "Outreach approved for Jordan Lee.",
+          "timestamp": "2026-06-19T22:38:35.732629"
+        },
+        {
+          "stage": "STAGE 06",
+          "durationMs": 925.5400000000001,
+          "status": "done",
+          "details": "Successfully drafted all outreach variants for Jordan Lee.",
+          "timestamp": "2026-06-19T22:38:35.732638"
+        },
+        {
+          "stage": "STAGE 06",
+          "durationMs": 0,
+          "status": "running",
+          "details": "Drafting outreach messages for Sarah Connor",
+          "timestamp": "2026-06-19T22:38:35.732641"
+        },
+        {
+          "stage": "STAGE 07",
+          "durationMs": 0,
+          "status": "running",
+          "details": "Safety and compliance audit for Sarah Connor (attempt 1)",
+          "timestamp": "2026-06-19T22:38:36.096675"
+        },
+        {
+          "stage": "STAGE 07",
+          "durationMs": 317.516,
+          "status": "done",
+          "details": "Outreach approved for Sarah Connor.",
+          "timestamp": "2026-06-19T22:38:36.414217"
+        },
+        {
+          "stage": "STAGE 06",
+          "durationMs": 681.581,
+          "status": "done",
+          "details": "Successfully drafted all outreach variants for Sarah Connor.",
+          "timestamp": "2026-06-19T22:38:36.414228"
+        },
+        {
+          "stage": "STAGE 06",
+          "durationMs": 0,
+          "status": "running",
+          "details": "Drafting outreach messages for Robert Vance",
+          "timestamp": "2026-06-19T22:38:36.414233"
+        },
+        {
+          "stage": "STAGE 07",
+          "durationMs": 0,
+          "status": "running",
+          "details": "Safety and compliance audit for Robert Vance (attempt 1)",
+          "timestamp": "2026-06-19T22:38:36.728486"
+        },
+        {
+          "stage": "STAGE 07",
+          "durationMs": 639.03,
+          "status": "done",
+          "details": "Outreach approved for Robert Vance.",
+          "timestamp": "2026-06-19T22:38:37.367536"
+        },
+        {
+          "stage": "STAGE 06",
+          "durationMs": 953.307,
+          "status": "done",
+          "details": "Successfully drafted all outreach variants for Robert Vance.",
+          "timestamp": "2026-06-19T22:38:37.367546"
+        },
+        {
+          "stage": "STAGE 06",
+          "durationMs": 0,
+          "status": "running",
+          "details": "Drafting outreach messages for Elena Rostova",
+          "timestamp": "2026-06-19T22:38:37.367551"
+        },
+        {
+          "stage": "STAGE 07",
+          "durationMs": 0,
+          "status": "running",
+          "details": "Safety and compliance audit for Elena Rostova (attempt 1)",
+          "timestamp": "2026-06-19T22:38:38.095208"
+        },
+        {
+          "stage": "STAGE 07",
+          "durationMs": 615.253,
+          "status": "done",
+          "details": "Outreach approved for Elena Rostova.",
+          "timestamp": "2026-06-19T22:38:38.710480"
+        },
+        {
+          "stage": "STAGE 06",
+          "durationMs": 1342.936,
+          "status": "done",
+          "details": "Successfully drafted all outreach variants for Elena Rostova.",
+          "timestamp": "2026-06-19T22:38:38.710492"
+        },
+        {
+          "stage": "STAGE 06",
+          "durationMs": 0,
+          "status": "running",
+          "details": "Drafting outreach messages for Marcus Aurelius",
+          "timestamp": "2026-06-19T22:38:38.710497"
+        },
+        {
+          "stage": "STAGE 07",
+          "durationMs": 0,
+          "status": "running",
+          "details": "Safety and compliance audit for Marcus Aurelius (attempt 1)",
+          "timestamp": "2026-06-19T22:38:39.557244"
+        },
+        {
+          "stage": "STAGE 07",
+          "durationMs": 586.799,
+          "status": "done",
+          "details": "Outreach approved for Marcus Aurelius.",
+          "timestamp": "2026-06-19T22:38:40.144066"
+        },
+        {
+          "stage": "STAGE 06",
+          "durationMs": 1433.573,
+          "status": "done",
+          "details": "Successfully drafted all outreach variants for Marcus Aurelius.",
+          "timestamp": "2026-06-19T22:38:40.144077"
+        }
+      ],
+      "started_at": "2026-06-19T22:38:05.665195",
+      "completed_at": "2026-06-19T22:38:40.144082"
+    },
+    {
+      "id": "36627ec7-b8e1-4fa4-bd12-bc793549dd2a",
+      "run_date": "2026-06-20",
+      "trigger": "manual",
+      "status": "partial_failure",
+      "prospects_surfaced": 0,
+      "stage_log": [
+        {
+          "stage": "STAGE 01",
+          "durationMs": 0,
+          "status": "running",
+          "details": "Searching LinkedIn Sales Navigator for prospects",
+          "timestamp": "2026-06-20T09:19:52.560578"
+        },
+        {
+          "stage": "STAGE 01",
+          "durationMs": 32194.12,
+          "status": "done",
+          "details": "Found 8 candidates (0 duplicates filtered)",
+          "timestamp": "2026-06-20T09:20:24.754704"
+        },
+        {
+          "stage": "STAGE 02",
+          "durationMs": 0,
+          "status": "running",
+          "details": "Scoring and ranking 8 candidates",
+          "timestamp": "2026-06-20T09:20:24.754712"
+        },
+        {
+          "stage": "STAGE 02",
+          "durationMs": 16507.882999999998,
+          "status": "done",
+          "details": "Scored all. Selected top 0 prospects.",
+          "timestamp": "2026-06-20T09:20:41.262621"
+        }
+      ],
+      "started_at": "2026-06-20T09:19:52.560569",
+      "completed_at": "2026-06-20T09:20:41.262662"
+    }
+  ],
+  "prospects": [
+    {
+      "name": "Jordan Lee",
+      "title": "Director of Revenue Cycle",
+      "company": "Summit Health Group",
+      "company_website": "summithealthgroup.com",
+      "linkedin_url": "https://linkedin.com/in/jordanlee-rcm",
+      "fit_score": 92,
+      "confidence_score": 90,
+      "status": "needs_review",
+      "signal_type": "job_change",
+      "signal_description": "Appointed to lead the patient operations restructure program.",
+      "signal_source_url": "https://summithealthgroup.com/press",
+      "signal_date": "2026-06-19",
+      "pain_hypothesis": "Manual workflows in prior authorization and eligibility status verification causing check-in delays.",
+      "primary_use_case": "automating eligibility verification",
+      "secondary_use_case": "reducing manual RCM workload",
+      "why_relevant": "Automating calls to payers frees up practice managers and billing staff.",
+      "sources": [
+        "https://summithealthgroup.gatheroperationalcomplexitydetails.\n\nusethesewebresearchsnippetsaboutthe.com/about",
+        "https://summithealthgroup.gatheroperationalcomplexitydetails.\n\nusethesewebresearchsnippetsaboutthe.com/billing"
+      ],
+      "risk_notes": "None",
+      "outreach_messages": {
+        "connectionNote": {
+          "text": "Hi Jordan Lee, congratulations on your new role. Saw you are leading patient operations. We help practice managers automate prior authorization checks and eligibility calls directly. Open to sharing what we see?",
+          "charCount": 218
+        },
+        "followUpMessage": {
+          "text": "Hi Jordan Lee,\n\nHope your new role is going well. Since you are restructuring billing workflows, I wanted to share a brief note on how we help provider groups automate eligibility status verification.\n\nWe focus on removing the manual overhead of calling payers for status checks, allowing billing teams to focus on denials.\n\nWould you be open to a brief, low-pressure conversation to see if we can save your team administrative hours?",
+          "wordCount": 77
+        },
+        "coldEmail": {
+          "subject": "Automating Claims Follow-ups for Summit Health Group",
+          "text": "Hi Jordan Lee,\n\nI saw the recent announcement regarding your promotion. Restructuring operations to improve billing efficiency is a significant undertaking.\n\nAt VoiceCare AI, we partner with patient access and RCM leaders to automate prior authorization status and eligibility verification workflows. By handling repetitive payer calls automatically, we help billing departments scale their administrative output without adding headcount.\n\nIf you are currently evaluating your vendor mix or trying to resolve back-office backlogs, let me know if you would be open to a quick, casual exchange on how we do this.\n\nBest regards,\nSales Team",
+          "wordCount": 115
+        },
+        "followUpDraft2": {
+          "text": "Hi Jordan Lee,\n\nI know you are busy settling into the new role. If manual RCM workload is a priority for your team, we've developed automated eligibility verification tools that free up practice managers from long phone calls.\n\nLet me know if you'd like a quick overview of how we save admin hours.",
+          "wordCount": 59
+        }
+      },
+      "id": "65a4bca0-a3e2-4a54-ab09-c88c8a501f7c",
+      "run_date": "2026-06-19",
+      "created_at": "2026-06-19T22:38:40.146717"
+    },
+    {
+      "name": "Sarah Connor",
+      "title": "Practice Administrator",
+      "company": "Metropolitan Patient Access",
+      "company_website": "metropatient.com",
+      "linkedin_url": "https://linkedin.com/in/sarahc-pat-access",
+      "fit_score": 88,
+      "confidence_score": 90,
+      "status": "needs_review",
+      "signal_type": "job_change",
+      "signal_description": "Appointed to lead the patient operations restructure program.",
+      "signal_source_url": "https://summithealthgroup.com/press",
+      "signal_date": "2026-06-19",
+      "pain_hypothesis": "Manual workflows in prior authorization and eligibility status verification causing check-in delays.",
+      "primary_use_case": "automating eligibility verification",
+      "secondary_use_case": "reducing manual RCM workload",
+      "why_relevant": "Automating calls to payers frees up practice managers and billing staff.",
+      "sources": [
+        "https://metropolitanpatientaccess.gatheroperationalcomplexitydetails.\n\nusethesewebresearchsnippetsaboutthe.com/about",
+        "https://metropolitanpatientaccess.gatheroperationalcomplexitydetails.\n\nusethesewebresearchsnippetsaboutthe.com/billing"
+      ],
+      "risk_notes": "None",
+      "outreach_messages": {
+        "connectionNote": {
+          "text": "Hi Sarah Connor, congratulations on your new role. Saw you are leading patient operations. We help practice managers automate prior authorization checks and eligibility calls directly. Open to sharing what we see?",
+          "charCount": 218
+        },
+        "followUpMessage": {
+          "text": "Hi Sarah Connor,\n\nHope your new role is going well. Since you are restructuring billing workflows, I wanted to share a brief note on how we help provider groups automate eligibility status verification.\n\nWe focus on removing the manual overhead of calling payers for status checks, allowing billing teams to focus on denials.\n\nWould you be open to a brief, low-pressure conversation to see if we can save your team administrative hours?",
+          "wordCount": 77
+        },
+        "coldEmail": {
+          "subject": "Automating Claims Follow-ups for Summit Health Group",
+          "text": "Hi Sarah Connor,\n\nI saw the recent announcement regarding your promotion. Restructuring operations to improve billing efficiency is a significant undertaking.\n\nAt VoiceCare AI, we partner with patient access and RCM leaders to automate prior authorization status and eligibility verification workflows. By handling repetitive payer calls automatically, we help billing departments scale their administrative output without adding headcount.\n\nIf you are currently evaluating your vendor mix or trying to resolve back-office backlogs, let me know if you would be open to a quick, casual exchange on how we do this.\n\nBest regards,\nSales Team",
+          "wordCount": 115
+        },
+        "followUpDraft2": {
+          "text": "Hi Sarah Connor,\n\nI know you are busy settling into the new role. If manual RCM workload is a priority for your team, we've developed automated eligibility verification tools that free up practice managers from long phone calls.\n\nLet me know if you'd like a quick overview of how we save admin hours.",
+          "wordCount": 59
+        }
+      },
+      "id": "19c6fe25-fedd-41ae-b565-baf16d73e0eb",
+      "run_date": "2026-06-19",
+      "created_at": "2026-06-19T22:38:40.147975"
+    },
+    {
+      "name": "Robert Vance",
+      "title": "VP of Billing Operations",
+      "company": "Vance Healthcare Solutions",
+      "company_website": "vancehealth.com",
+      "linkedin_url": "https://linkedin.com/in/bobvance-rcm",
+      "fit_score": 85,
+      "confidence_score": 90,
+      "status": "needs_review",
+      "signal_type": "job_change",
+      "signal_description": "Appointed to lead the patient operations restructure program.",
+      "signal_source_url": "https://summithealthgroup.com/press",
+      "signal_date": "2026-06-19",
+      "pain_hypothesis": "Manual workflows in prior authorization and eligibility status verification causing check-in delays.",
+      "primary_use_case": "automating eligibility verification",
+      "secondary_use_case": "reducing manual RCM workload",
+      "why_relevant": "Automating calls to payers frees up practice managers and billing staff.",
+      "sources": [
+        "https://vancehealthcaresolutions.gatheroperationalcomplexitydetails.\n\nusethesewebresearchsnippetsaboutthe.com/about",
+        "https://vancehealthcaresolutions.gatheroperationalcomplexitydetails.\n\nusethesewebresearchsnippetsaboutthe.com/billing"
+      ],
+      "risk_notes": "None",
+      "outreach_messages": {
+        "connectionNote": {
+          "text": "Hi Robert Vance, congratulations on your new role. Saw you are leading patient operations. We help practice managers automate prior authorization checks and eligibility calls directly. Open to sharing what we see?",
+          "charCount": 218
+        },
+        "followUpMessage": {
+          "text": "Hi Robert Vance,\n\nHope your new role is going well. Since you are restructuring billing workflows, I wanted to share a brief note on how we help provider groups automate eligibility status verification.\n\nWe focus on removing the manual overhead of calling payers for status checks, allowing billing teams to focus on denials.\n\nWould you be open to a brief, low-pressure conversation to see if we can save your team administrative hours?",
+          "wordCount": 77
+        },
+        "coldEmail": {
+          "subject": "Automating Claims Follow-ups for Summit Health Group",
+          "text": "Hi Robert Vance,\n\nI saw the recent announcement regarding your promotion. Restructuring operations to improve billing efficiency is a significant undertaking.\n\nAt VoiceCare AI, we partner with patient access and RCM leaders to automate prior authorization status and eligibility verification workflows. By handling repetitive payer calls automatically, we help billing departments scale their administrative output without adding headcount.\n\nIf you are currently evaluating your vendor mix or trying to resolve back-office backlogs, let me know if you would be open to a quick, casual exchange on how we do this.\n\nBest regards,\nSales Team",
+          "wordCount": 115
+        },
+        "followUpDraft2": {
+          "text": "Hi Robert Vance,\n\nI know you are busy settling into the new role. If manual RCM workload is a priority for your team, we've developed automated eligibility verification tools that free up practice managers from long phone calls.\n\nLet me know if you'd like a quick overview of how we save admin hours.",
+          "wordCount": 59
+        }
+      },
+      "id": "0f728b81-e3b8-435b-a068-f35c553af4ec",
+      "run_date": "2026-06-19",
+      "created_at": "2026-06-19T22:38:40.149040"
+    },
+    {
+      "name": "Elena Rostova",
+      "title": "Director of Patient Access",
+      "company": "St. Jude Clinic",
+      "company_website": "stjudeclinic.org",
+      "linkedin_url": null,
+      "fit_score": 79,
+      "confidence_score": 90,
+      "status": "needs_review",
+      "signal_type": "job_change",
+      "signal_description": "Appointed to lead the patient operations restructure program.",
+      "signal_source_url": "https://summithealthgroup.com/press",
+      "signal_date": "2026-06-19",
+      "pain_hypothesis": "Manual workflows in prior authorization and eligibility status verification causing check-in delays.",
+      "primary_use_case": "automating eligibility verification",
+      "secondary_use_case": "reducing manual RCM workload",
+      "why_relevant": "Automating calls to payers frees up practice managers and billing staff.",
+      "sources": [
+        "https://st.judeclinic.gatheroperationalcomplexitydetails.\n\nusethesewebresearchsnippetsaboutthe.com/about",
+        "https://st.judeclinic.gatheroperationalcomplexitydetails.\n\nusethesewebresearchsnippetsaboutthe.com/billing"
+      ],
+      "risk_notes": "None",
+      "outreach_messages": {
+        "connectionNote": {
+          "text": "Hi Elena Rostova, congratulations on your new role. Saw you are leading patient operations. We help practice managers automate prior authorization checks and eligibility calls directly. Open to sharing what we see?",
+          "charCount": 218
+        },
+        "followUpMessage": {
+          "text": "Hi Elena Rostova,\n\nHope your new role is going well. Since you are restructuring billing workflows, I wanted to share a brief note on how we help provider groups automate eligibility status verification.\n\nWe focus on removing the manual overhead of calling payers for status checks, allowing billing teams to focus on denials.\n\nWould you be open to a brief, low-pressure conversation to see if we can save your team administrative hours?",
+          "wordCount": 77
+        },
+        "coldEmail": {
+          "subject": "Automating Claims Follow-ups for Summit Health Group",
+          "text": "Hi Elena Rostova,\n\nI saw the recent announcement regarding your promotion. Restructuring operations to improve billing efficiency is a significant undertaking.\n\nAt VoiceCare AI, we partner with patient access and RCM leaders to automate prior authorization status and eligibility verification workflows. By handling repetitive payer calls automatically, we help billing departments scale their administrative output without adding headcount.\n\nIf you are currently evaluating your vendor mix or trying to resolve back-office backlogs, let me know if you would be open to a quick, casual exchange on how we do this.\n\nBest regards,\nSales Team",
+          "wordCount": 115
+        },
+        "followUpDraft2": {
+          "text": "Hi Elena Rostova,\n\nI know you are busy settling into the new role. If manual RCM workload is a priority for your team, we've developed automated eligibility verification tools that free up practice managers from long phone calls.\n\nLet me know if you'd like a quick overview of how we save admin hours.",
+          "wordCount": 59
+        }
+      },
+      "id": "5240834e-3366-451f-9e0a-8d337941989c",
+      "run_date": "2026-06-19",
+      "created_at": "2026-06-19T22:38:40.150024"
+    },
+    {
+      "name": "Marcus Aurelius",
+      "title": "Healthcare Practice Manager",
+      "company": "Roma Health Alliance",
+      "company_website": "romahealth.org",
+      "linkedin_url": "https://linkedin.com/in/marcus-roma",
+      "fit_score": 76,
+      "confidence_score": 90,
+      "status": "needs_review",
+      "signal_type": "job_change",
+      "signal_description": "Appointed to lead the patient operations restructure program.",
+      "signal_source_url": "https://summithealthgroup.com/press",
+      "signal_date": "2026-06-19",
+      "pain_hypothesis": "Manual workflows in prior authorization and eligibility status verification causing check-in delays.",
+      "primary_use_case": "automating eligibility verification",
+      "secondary_use_case": "reducing manual RCM workload",
+      "why_relevant": "Automating calls to payers frees up practice managers and billing staff.",
+      "sources": [
+        "https://romahealthalliance.gatheroperationalcomplexitydetails.\n\nusethesewebresearchsnippetsaboutthe.com/about",
+        "https://romahealthalliance.gatheroperationalcomplexitydetails.\n\nusethesewebresearchsnippetsaboutthe.com/billing"
+      ],
+      "risk_notes": "None",
+      "outreach_messages": {
+        "connectionNote": {
+          "text": "Hi Marcus Aurelius, congratulations on your new role. Saw you are leading patient operations. We help practice managers automate prior authorization checks and eligibility calls directly. Open to sharing what we see?",
+          "charCount": 218
+        },
+        "followUpMessage": {
+          "text": "Hi Marcus Aurelius,\n\nHope your new role is going well. Since you are restructuring billing workflows, I wanted to share a brief note on how we help provider groups automate eligibility status verification.\n\nWe focus on removing the manual overhead of calling payers for status checks, allowing billing teams to focus on denials.\n\nWould you be open to a brief, low-pressure conversation to see if we can save your team administrative hours?",
+          "wordCount": 77
+        },
+        "coldEmail": {
+          "subject": "Automating Claims Follow-ups for Summit Health Group",
+          "text": "Hi Marcus Aurelius,\n\nI saw the recent announcement regarding your promotion. Restructuring operations to improve billing efficiency is a significant undertaking.\n\nAt VoiceCare AI, we partner with patient access and RCM leaders to automate prior authorization status and eligibility verification workflows. By handling repetitive payer calls automatically, we help billing departments scale their administrative output without adding headcount.\n\nIf you are currently evaluating your vendor mix or trying to resolve back-office backlogs, let me know if you would be open to a quick, casual exchange on how we do this.\n\nBest regards,\nSales Team",
+          "wordCount": 115
+        },
+        "followUpDraft2": {
+          "text": "Hi Marcus Aurelius,\n\nI know you are busy settling into the new role. If manual RCM workload is a priority for your team, we've developed automated eligibility verification tools that free up practice managers from long phone calls.\n\nLet me know if you'd like a quick overview of how we save admin hours.",
+          "wordCount": 59
+        }
+      },
+      "id": "40ac0d99-331a-49f8-8b4b-bcd4fc1ea7e9",
+      "run_date": "2026-06-19",
+      "created_at": "2026-06-19T22:38:40.151013"
+    }
+  ],
+  "dedup_index": [],
+  "schedule": {
+    "enabled": false,
+    "frequency": "daily",
+    "time": "09:00",
+    "email": "shivamsingh0013@gmail.com",
+    "last_run": "2026-06-20T09:11:01.027313"
+  }
+}

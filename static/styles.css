@@ -1,0 +1,1036 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ============================================================
+   VoiceCare AI Lead Personalization Console — styles.css
+   ============================================================ */
+
+:root {
+  --bg: #090B0E;
+  --surface: #12161A;
+  --surface-hover: #1A2027;
+  --ink: #E6EDF3;
+  --ink-muted: #7D8590;
+  --border: #30363D;
+  --accent: #26A69A; /* Teal */
+  --accent-soft: rgba(38, 166, 154, 0.08);
+  --signal: #F57C00; /* Amber */
+  --error: #F85149;
+  --error-soft: rgba(248, 81, 73, 0.1);
+  --success: #26A69A;
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono", Consolas, monospace;
+
+  --radius: 8px;
+  --gap: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.5;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: var(--border);
+  text-underline-offset: 2px;
+}
+a:hover { text-decoration-color: var(--accent); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ---------------- Site Header & Footer ---------------- */
+
+.site-header {
+  position: fixed;
+  top: 16px;
+  left: 20px;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.site-header * {
+  pointer-events: auto;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-mark {
+  color: var(--accent);
+  font-size: 14px;
+}
+
+.brand-name {
+  font-weight: 600;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+}
+
+.version-badge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.brand-tagline {
+  margin: 4px 0 0 0;
+  color: var(--ink-muted);
+  font-size: 0.85rem;
+}
+
+.site-footer {
+  position: fixed;
+  bottom: 16px;
+  left: 20px;
+  right: 20px;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+}
+
+.site-footer a, .site-footer p {
+  pointer-events: auto;
+}
+
+.site-footer a {
+  margin-left: 8px;
+}
+
+/* ---------------- Canvas Viewport ---------------- */
+
+.canvas-viewport {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  background-color: var(--bg);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+  user-select: none;
+}
+
+.canvas-container {
+  position: absolute;
+  width: 3200px;
+  height: 2000px;
+  transform-origin: 0 0;
+  cursor: grab;
+}
+
+.canvas-container:active {
+  cursor: grabbing;
+}
+
+.canvas-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ---------------- SVG Wires ---------------- */
+
+.wire {
+  fill: none;
+  stroke: rgba(125, 133, 144, 0.2);
+  stroke-width: 2px;
+  transition: stroke 0.3s, stroke-width 0.3s, filter 0.3s;
+}
+
+.wire.active {
+  stroke: var(--accent);
+  stroke-width: 3px;
+  stroke-dasharray: 8 6;
+  animation: flow 30s linear infinite;
+  filter: drop-shadow(0 0 4px rgba(38, 166, 154, 0.5));
+}
+
+.wire.completed {
+  stroke: var(--accent);
+  stroke-width: 2px;
+  opacity: 0.6;
+}
+
+@keyframes flow {
+  from { stroke-dashoffset: 500; }
+  to { stroke-dashoffset: 0; }
+}
+
+/* ---------------- Canvas UI Nodes ---------------- */
+
+.canvas-node {
+  position: absolute;
+  background: rgba(18, 22, 26, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  user-select: text;
+}
+
+.canvas-node.dragging {
+  cursor: grabbing;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8) !important;
+  border-color: var(--accent) !important;
+  z-index: 100;
+}
+
+.node-header, .prospect-card-header {
+  cursor: grab;
+}
+
+.node-header:active, .prospect-card-header:active {
+  cursor: grabbing;
+}
+
+.canvas-node:hover {
+  border-color: var(--accent);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.7);
+}
+
+.node-header {
+  margin-bottom: 4px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  margin: 0 0 4px 0;
+  letter-spacing: 0.05em;
+}
+
+.panel-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 2px 0;
+  color: var(--ink);
+}
+
+.panel-subtitle {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+}
+
+/* ---------------- Node Ports ---------------- */
+
+.port {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  z-index: 12;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.port-in {
+  left: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.port-out {
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.canvas-node:hover .port {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* ---------------- Pipeline Monitor Chain ---------------- */
+
+.stages-chain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(9, 11, 14, 0.4);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 16px;
+  margin-top: 8px;
+  position: relative;
+}
+
+.stage-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.stage-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid var(--border);
+  transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Stage statuses */
+.stage-step.idle .stage-dot {
+  border-color: var(--ink-muted);
+  background: transparent;
+}
+
+.stage-step.running .stage-dot {
+  border-color: var(--signal);
+  background: var(--signal);
+  animation: pulse-orange 1.5s infinite;
+}
+
+.stage-step.done .stage-dot {
+  border-color: var(--success);
+  background: var(--success);
+  box-shadow: 0 0 6px var(--accent);
+}
+
+.stage-step.error .stage-dot {
+  border-color: var(--error);
+  background: var(--error);
+}
+
+.stage-step.skipped .stage-dot {
+  border-style: dashed;
+  border-color: var(--ink-muted);
+}
+
+.stage-label {
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  font-family: var(--font-mono);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.stage-step.running .stage-label {
+  color: var(--signal);
+}
+
+.stage-step.done .stage-label {
+  color: var(--ink);
+}
+
+@keyframes pulse-orange {
+  0% { box-shadow: 0 0 0 0 rgba(245, 124, 0, 0.6); }
+  70% { box-shadow: 0 0 0 6px rgba(245, 124, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(245, 124, 0, 0); }
+}
+
+/* ---------------- Prospect Cards on Canvas ---------------- */
+
+.prospect-node {
+  width: 290px;
+}
+
+.prospect-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.prospect-title-block h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 2px 0;
+}
+
+.prospect-title-block p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+}
+
+.fit-pill {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.prospect-meta-details {
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  border-top: 1px solid rgba(48, 54, 61, 0.5);
+  padding-top: 8px;
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.prospect-signal-snippet {
+  font-style: italic;
+  font-size: 0.8rem;
+  border-left: 2px solid var(--border);
+  padding-left: 8px;
+  margin: 4px 0 0 0;
+  color: var(--ink-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.prospect-status-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  margin-top: 4px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.status-dot.needs_review { background: var(--signal); }
+.status-dot.approved { background: var(--success); }
+.status-dot.edited_approved { background: var(--success); border: 1px solid var(--ink); }
+.status-dot.rejected { background: var(--ink-muted); }
+.status-dot.needs_manual_research { background: var(--error); }
+.status-dot.idle { background: var(--border); }
+.status-dot.processing {
+  background: var(--accent);
+  animation: pulse-dot 1.2s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+  0% { transform: scale(0.8); opacity: 0.5; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.8); opacity: 0.5; }
+}
+
+.prospect-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+
+/* ---------------- Accordion, Textarea and Controls ---------------- */
+
+.manual-input-accordion {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 6px;
+}
+
+.manual-input-accordion summary {
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ink-muted);
+  outline: none;
+}
+
+.manual-input-accordion summary:hover {
+  color: var(--ink);
+}
+
+.manual-input-accordion[open] {
+  padding-bottom: 12px;
+}
+
+#scheduler-accordion {
+  border: 1px solid rgba(38, 166, 154, 0.35);
+  background: rgba(38, 166, 154, 0.03);
+  border-radius: 6px;
+  padding: 10px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#scheduler-accordion:hover {
+  border-color: rgba(38, 166, 154, 0.6);
+  background: rgba(38, 166, 154, 0.06);
+  box-shadow: 0 0 16px rgba(38, 166, 154, 0.12);
+}
+
+#scheduler-accordion summary {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.field-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field span {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--ink-muted);
+}
+
+input, select, textarea {
+  background: var(--bg);
+  color: var(--ink);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  width: 100%;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: 1px solid var(--accent);
+  border-color: var(--accent);
+  background: var(--surface);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 50px;
+}
+
+.pipeline-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.run-metadata {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-top: 1px solid var(--border);
+  padding-top: 8px;
+}
+
+/* Buttons */
+.btn {
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--border);
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover:not(:disabled) {
+  background: var(--surface-hover);
+  border-color: var(--ink-muted);
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--ink);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: rgba(38, 166, 154, 0.16);
+}
+
+.btn-small {
+  padding: 4px 8px;
+  font-size: 0.75rem;
+}
+
+/* ---------------- Floating Canvas Controls ---------------- */
+
+.canvas-controls {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 100;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  display: flex;
+  gap: 1px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.ctrl-btn {
+  background: transparent;
+  border: none;
+  color: var(--ink);
+  width: 32px;
+  height: 32px;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ctrl-btn:hover {
+  background: var(--surface-hover);
+}
+
+.ctrl-btn:not(:last-child) {
+  border-right: 1px solid var(--border);
+}
+
+/* ---------------- Run Log Panel ---------------- */
+
+.log-panel {
+  position: fixed;
+  bottom: -320px;
+  left: 20px;
+  right: 20px;
+  height: 280px;
+  background: rgba(18, 22, 26, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+  z-index: 150;
+  display: flex;
+  flex-direction: column;
+  transition: bottom 0.3s ease;
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.6);
+}
+
+.log-panel.open {
+  bottom: 0;
+}
+
+.log-header {
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.log-header h4 {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+
+#close-logs-btn {
+  background: transparent;
+  border: none;
+  color: var(--ink-muted);
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+#close-logs-btn:hover { color: var(--ink); }
+
+.log-output {
+  margin: 0;
+  padding: 12px;
+  overflow: auto;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #A9B2C3;
+  background: #090B0E;
+  flex: 1;
+  white-space: pre-wrap;
+}
+
+/* ---------------- Floating Drawer Toggle ---------------- */
+
+.floating-drawer-toggle {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-right: none;
+  border-top-left-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
+  padding: 12px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  z-index: 210;
+  box-shadow: -4px 0 12px rgba(0,0,0,0.3);
+}
+
+.floating-drawer-toggle:hover {
+  background: var(--surface-hover);
+}
+
+.toggle-icon { font-size: 1.1rem; }
+.toggle-text {
+  writing-mode: vertical-rl;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+}
+
+/* ---------------- Right Details Slide-Out Drawer ---------------- */
+
+.output-drawer {
+  position: fixed;
+  top: 0;
+  right: calc(-55vw - 40px);
+  width: 55vw;
+  min-width: 540px;
+  max-width: 900px;
+  height: 100%;
+  background: var(--surface); /* Solid surface background prevents paint storms */
+  border-left: 1px solid var(--border);
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.6);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.3s ease;
+}
+
+.output-drawer.open {
+  right: 0;
+}
+
+.drawer-header {
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.drawer-nav-pills {
+  display: flex;
+  gap: 6px;
+  margin-left: auto;
+  margin-right: 16px;
+}
+
+.drawer-nav-pill {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--ink-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.drawer-nav-pill:hover {
+  border-color: var(--accent);
+  color: var(--ink);
+}
+
+.drawer-nav-pill.active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 6px var(--accent-soft);
+}
+
+.drawer-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+#drawer-title {
+  margin: 4px 0 2px 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+#drawer-subtitle {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+}
+
+.drawer-close {
+  background: transparent;
+  border: none;
+  color: var(--ink-muted);
+  font-size: 1.75rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.drawer-close:hover {
+  color: var(--ink);
+}
+
+.drawer-body {
+  padding: 20px;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.drawer-footer {
+  padding: 16px 20px;
+  border-top: 1px solid var(--border);
+  background: rgba(9, 11, 14, 0.5);
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+/* ---------------- Drawer Inner Content Styles ---------------- */
+
+.inspector-section {
+  border-bottom: 1px solid rgba(48, 54, 61, 0.5);
+  padding-bottom: 16px;
+}
+
+.inspector-section:last-child {
+  border-bottom: none;
+}
+
+.inspector-section h4 {
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+  margin: 0 0 6px 0;
+}
+
+.inspector-section p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.inspector-section blockquote {
+  margin: 6px 0 0 0;
+  border-left: 2px solid var(--accent);
+  padding-left: 12px;
+  font-style: italic;
+  color: var(--ink);
+  background: rgba(38, 166, 154, 0.04);
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 4px;
+}
+
+.inspector-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+}
+
+.inspector-badge-row {
+  display: flex;
+  gap: var(--gap);
+  margin-top: 4px;
+}
+
+.meta-box {
+  background: rgba(9, 11, 14, 0.3);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+.meta-box .val {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.meta-box .lbl {
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+}
+
+.contact-missing {
+  color: var(--ink-muted);
+  font-style: italic;
+  font-weight: normal;
+}
+
+/* Tabbed Outreach Drafts Editor */
+.outreach-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 12px;
+}
+
+.outreach-tab-btn {
+  background: transparent;
+  border: none;
+  color: var(--ink-muted);
+  padding: 8px 12px;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.outreach-tab-btn:hover {
+  color: var(--ink);
+}
+
+.outreach-tab-btn.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.outreach-textarea {
+  min-height: 120px;
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  padding: 8px;
+}
+
+/* Source Lists */
+.source-list {
+  margin: 0;
+  padding-left: 16px;
+}
+
+.source-list li {
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+
+/* Checklists */
+.checklist-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: rgba(245, 124, 0, 0.02);
+  border: 1px dashed rgba(245, 124, 0, 0.2);
+  border-radius: 6px;
+  padding: 12px;
+  margin-top: 4px;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.checklist-item input {
+  width: auto;
+  cursor: pointer;
+  margin-top: 3px;
+}
+
+.checklist-item span {
+  font-size: 0.85rem;
+  user-select: none;
+}
+
+.action-status-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--gap);
+  border-top: 1px solid var(--border);
+  padding-top: var(--gap);
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ink-muted);
+}
