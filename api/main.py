@@ -1,5 +1,10 @@
 # api/main.py
 
+import os
+import sys
+# Insert project root to sys.path to resolve api imports in serverless contexts
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from fastapi import FastAPI, HTTPException, Header, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
