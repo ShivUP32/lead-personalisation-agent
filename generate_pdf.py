@@ -229,10 +229,48 @@ def build_pdf():
     pdf.bullet("Idempotency", "Re-running a date overwrites prior pipeline outputs for that date but preserves manual human approval decisions.")
 
     # ==========================================
-    # PAGE 5: COMPLIANCE & SAFETY BOUNDARIES
+    # PAGE 5: DYNAMIC SCHEDULER & RESEND INTEGRATION
     # ==========================================
     pdf.add_page()
-    pdf.chapter_title("Compliance & Safety Boundaries", "4")
+    pdf.chapter_title("Dynamic Scheduler & Resend Integration", "4")
+    
+    pdf.paragraph(
+        "To automate lead personalization campaigns, we implemented a serverless-ready "
+        "scheduler that operates autonomously via cron execution and emails HTML reports.",
+        style=""
+    )
+    
+    pdf.ln(2)
+    pdf.paragraph("Scheduler Components & Logic:", style="B", size=11)
+    pdf.bullet("Vercel Cron Trigger", "An hourly cron triggers /api/cron-run on Vercel Pro, or once-daily at 09:00 UTC (0 9 * * *) on Vercel Hobby, maintaining compatibility across all plans.")
+    pdf.bullet("Dynamic Interval Filtering", "Before executing, the backend checks database settings in db.json to enforce frequency intervals: Daily (22h lookback), Alternate Days (46h lookback), or Weekly (166h lookback) since the last execution.")
+    pdf.bullet("Resend HTML Report Dispatch", "If new prospects are surfaced, the scheduler formats and dispatches an executive daily report to the recipient email (defaulting to shivamsingh0013@gmail.com).")
+    pdf.bullet("Passcode Decoupling", "Decouples Vercel's auto-injected CRON_SECRET from manual UI actions by supporting a custom WORKSPACE_PASSCODE variable, allowing users to trigger runs without copy-pasting the cron secret.")
+
+    # ==========================================
+    # PAGE 6: RESILIENT FALLBACKS & INTERACTIVE CANVAS UI
+    # ==========================================
+    pdf.add_page()
+    pdf.chapter_title("Resilient Fallbacks & Interactive Canvas UI", "5")
+    
+    pdf.paragraph(
+        "The system has been hardened against API limits and optimized for "
+        "an intuitive, non-technical, and highly interactive user experience.",
+        style=""
+    )
+    
+    pdf.ln(2)
+    pdf.paragraph("System Integration and UI Details:", style="B", size=11)
+    pdf.bullet("Search Engine Fallback Chain", "Queries are resolved in the order: Tavily Search (primary search) -> Firecrawl Search (fallback 1) -> Jina Search (fallback 2) if keys are missing or rate-limited.")
+    pdf.bullet("Sales Navigator Leads API", "Queries LinkedIn Sales Navigator for prospects, using a high-fidelity mock dataset fallback if keys are missing, preventing pipeline halts.")
+    pdf.bullet("Figma-like Canvas Navigation", "Implements Spacebar / Middle Click click-and-drag panning, trackpad pinch-to-zoom, and Ctrl/Cmd + Scroll wheel zoom centered directly on the mouse cursor position.")
+    pdf.bullet("Actionable Empty State", "Output Console drawer is accessible on page load. If clicked before a run, it shows a clean tutorial layout and a direct CTA button to run the agent.")
+
+    # ==========================================
+    # PAGE 7: COMPLIANCE & SAFETY BOUNDARIES
+    # ==========================================
+    pdf.add_page()
+    pdf.chapter_title("Compliance & Safety Boundaries", "6")
     
     pdf.paragraph(
         "VoiceCare AI operates in the healthcare sector, which demands absolute adherence to privacy "

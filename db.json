@@ -390,7 +390,7 @@
       "completed_at": "2026-06-19T22:38:40.144082"
     },
     {
-      "id": "447e5924-f9a7-44f6-a998-4c59dcf0b9f9",
+      "id": "95216c97-3f4d-45ee-842f-70a7e0d3ca81",
       "run_date": "2026-06-20",
       "trigger": "manual",
       "status": "success",
@@ -401,382 +401,382 @@
           "durationMs": 0,
           "status": "running",
           "details": "Searching LinkedIn Sales Navigator for prospects",
-          "timestamp": "2026-06-20T09:33:50.424137"
+          "timestamp": "2026-06-20T09:40:57.786901"
         },
         {
           "stage": "STAGE 01",
-          "durationMs": 2540.331,
+          "durationMs": 2546.729,
           "status": "done",
           "details": "Found 8 candidates (0 duplicates filtered)",
-          "timestamp": "2026-06-20T09:33:52.964479"
+          "timestamp": "2026-06-20T09:41:00.333635"
         },
         {
           "stage": "STAGE 02",
           "durationMs": 0,
           "status": "running",
           "details": "Scoring and ranking 8 candidates",
-          "timestamp": "2026-06-20T09:33:52.964492"
+          "timestamp": "2026-06-20T09:41:00.333644"
         },
         {
           "stage": "STAGE 02",
-          "durationMs": 1.357,
+          "durationMs": 1.408,
           "status": "done",
           "details": "Scored all. Selected top 5 prospects.",
-          "timestamp": "2026-06-20T09:33:52.965853"
+          "timestamp": "2026-06-20T09:41:00.335054"
         },
         {
           "stage": "STAGE 03",
           "durationMs": 0,
           "status": "running",
           "details": "Enriching research on Jordan Lee (Summit Health Group)",
-          "timestamp": "2026-06-20T09:33:52.965864"
+          "timestamp": "2026-06-20T09:41:00.335062"
         },
         {
           "stage": "STAGE 03",
-          "durationMs": 1212.1280000000002,
+          "durationMs": 1913.256,
           "status": "done",
           "details": "Research complete for Jordan Lee.",
-          "timestamp": "2026-06-20T09:33:54.178005"
+          "timestamp": "2026-06-20T09:41:02.248324"
         },
         {
           "stage": "STAGE 04",
           "durationMs": 0,
           "status": "running",
           "details": "Extracting signal for Jordan Lee",
-          "timestamp": "2026-06-20T09:33:54.178009"
+          "timestamp": "2026-06-20T09:41:02.248328"
         },
         {
           "stage": "STAGE 04",
-          "durationMs": 0.525,
+          "durationMs": 0.8220000000000001,
           "status": "done",
           "details": "Signal extracted: Appointed to lead the patient operations restructure program.",
-          "timestamp": "2026-06-20T09:33:54.178537"
+          "timestamp": "2026-06-20T09:41:02.249154"
         },
         {
           "stage": "STAGE 05",
           "durationMs": 0,
           "status": "running",
           "details": "Mapping use-case for Jordan Lee",
-          "timestamp": "2026-06-20T09:33:54.178539"
+          "timestamp": "2026-06-20T09:41:02.249157"
         },
         {
           "stage": "STAGE 05",
-          "durationMs": 0.728,
+          "durationMs": 0.5810000000000001,
           "status": "done",
           "details": "Matched primary use case: automating eligibility verification",
-          "timestamp": "2026-06-20T09:33:54.179271"
+          "timestamp": "2026-06-20T09:41:02.249743"
         },
         {
           "stage": "STAGE 03",
           "durationMs": 0,
           "status": "running",
           "details": "Enriching research on Sarah Connor (Metropolitan Patient Access)",
-          "timestamp": "2026-06-20T09:33:54.179280"
+          "timestamp": "2026-06-20T09:41:02.249752"
         },
         {
           "stage": "STAGE 03",
-          "durationMs": 1256.804,
+          "durationMs": 1963.386,
           "status": "done",
           "details": "Research complete for Sarah Connor.",
-          "timestamp": "2026-06-20T09:33:55.436098"
+          "timestamp": "2026-06-20T09:41:04.213144"
         },
         {
           "stage": "STAGE 04",
           "durationMs": 0,
           "status": "running",
           "details": "Extracting signal for Sarah Connor",
-          "timestamp": "2026-06-20T09:33:55.436105"
+          "timestamp": "2026-06-20T09:41:04.213147"
         },
         {
           "stage": "STAGE 04",
-          "durationMs": 1.053,
+          "durationMs": 0.47600000000000003,
           "status": "done",
           "details": "Signal extracted: Published an article on LinkedIn about overcoming high payer hold times in patient access.",
-          "timestamp": "2026-06-20T09:33:55.437163"
+          "timestamp": "2026-06-20T09:41:04.213625"
         },
         {
           "stage": "STAGE 05",
           "durationMs": 0,
           "status": "running",
           "details": "Mapping use-case for Sarah Connor",
-          "timestamp": "2026-06-20T09:33:55.437166"
+          "timestamp": "2026-06-20T09:41:04.213627"
         },
         {
           "stage": "STAGE 05",
-          "durationMs": 0.805,
+          "durationMs": 0.506,
           "status": "done",
           "details": "Matched primary use case: automating eligibility verification",
-          "timestamp": "2026-06-20T09:33:55.437978"
+          "timestamp": "2026-06-20T09:41:04.214136"
         },
         {
           "stage": "STAGE 03",
           "durationMs": 0,
           "status": "running",
           "details": "Enriching research on Robert Vance (Vance Healthcare Solutions)",
-          "timestamp": "2026-06-20T09:33:55.437994"
+          "timestamp": "2026-06-20T09:41:04.214143"
         },
         {
           "stage": "STAGE 03",
-          "durationMs": 1336.589,
+          "durationMs": 1911.612,
           "status": "done",
           "details": "Research complete for Robert Vance.",
-          "timestamp": "2026-06-20T09:33:56.774591"
+          "timestamp": "2026-06-20T09:41:06.125769"
         },
         {
           "stage": "STAGE 04",
           "durationMs": 0,
           "status": "running",
           "details": "Extracting signal for Robert Vance",
-          "timestamp": "2026-06-20T09:33:56.774598"
+          "timestamp": "2026-06-20T09:41:06.125776"
         },
         {
           "stage": "STAGE 04",
-          "durationMs": 0.799,
+          "durationMs": 1.3619999999999999,
           "status": "done",
           "details": "Signal extracted: Vance Healthcare Solutions announced a major expansion of their ambulatory clinic locations.",
-          "timestamp": "2026-06-20T09:33:56.775402"
+          "timestamp": "2026-06-20T09:41:06.127145"
         },
         {
           "stage": "STAGE 05",
           "durationMs": 0,
           "status": "running",
           "details": "Mapping use-case for Robert Vance",
-          "timestamp": "2026-06-20T09:33:56.775405"
+          "timestamp": "2026-06-20T09:41:06.127150"
         },
         {
           "stage": "STAGE 05",
-          "durationMs": 0.528,
+          "durationMs": 1.297,
           "status": "done",
           "details": "Matched primary use case: automating eligibility verification",
-          "timestamp": "2026-06-20T09:33:56.775935"
+          "timestamp": "2026-06-20T09:41:06.128453"
         },
         {
           "stage": "STAGE 03",
           "durationMs": 0,
           "status": "running",
           "details": "Enriching research on Elena Rostova (St. Jude Clinic)",
-          "timestamp": "2026-06-20T09:33:56.775942"
+          "timestamp": "2026-06-20T09:41:06.128469"
         },
         {
           "stage": "STAGE 03",
-          "durationMs": 1328.587,
+          "durationMs": 1760.538,
           "status": "done",
           "details": "Research complete for Elena Rostova.",
-          "timestamp": "2026-06-20T09:33:58.104546"
+          "timestamp": "2026-06-20T09:41:07.889018"
         },
         {
           "stage": "STAGE 04",
           "durationMs": 0,
           "status": "running",
           "details": "Extracting signal for Elena Rostova",
-          "timestamp": "2026-06-20T09:33:58.104558"
+          "timestamp": "2026-06-20T09:41:07.889026"
         },
         {
           "stage": "STAGE 04",
-          "durationMs": 1.439,
+          "durationMs": 1.299,
           "status": "done",
           "details": "Signal extracted: Active job opening for two Medical Billing Specialists to handle manual eligibility checks.",
-          "timestamp": "2026-06-20T09:33:58.106005"
+          "timestamp": "2026-06-20T09:41:07.890331"
         },
         {
           "stage": "STAGE 05",
           "durationMs": 0,
           "status": "running",
           "details": "Mapping use-case for Elena Rostova",
-          "timestamp": "2026-06-20T09:33:58.106009"
+          "timestamp": "2026-06-20T09:41:07.890336"
         },
         {
           "stage": "STAGE 05",
-          "durationMs": 1.1039999999999999,
+          "durationMs": 1.072,
           "status": "done",
           "details": "Matched primary use case: automating eligibility verification",
-          "timestamp": "2026-06-20T09:33:58.107122"
+          "timestamp": "2026-06-20T09:41:07.891411"
         },
         {
           "stage": "STAGE 03",
           "durationMs": 0,
           "status": "running",
           "details": "Enriching research on Marcus Aurelius (Roma Health Alliance)",
-          "timestamp": "2026-06-20T09:33:58.107169"
+          "timestamp": "2026-06-20T09:41:07.891425"
         },
         {
           "stage": "STAGE 03",
-          "durationMs": 1316.303,
+          "durationMs": 1878.384,
           "status": "done",
           "details": "Research complete for Marcus Aurelius.",
-          "timestamp": "2026-06-20T09:33:59.423488"
+          "timestamp": "2026-06-20T09:41:09.769836"
         },
         {
           "stage": "STAGE 04",
           "durationMs": 0,
           "status": "running",
           "details": "Extracting signal for Marcus Aurelius",
-          "timestamp": "2026-06-20T09:33:59.423498"
+          "timestamp": "2026-06-20T09:41:09.769842"
         },
         {
           "stage": "STAGE 04",
-          "durationMs": 1.408,
+          "durationMs": 1.107,
           "status": "done",
           "details": "Signal extracted: Posted a discussion on patient eligibility verification automation benefits.",
-          "timestamp": "2026-06-20T09:33:59.424915"
+          "timestamp": "2026-06-20T09:41:09.770955"
         },
         {
           "stage": "STAGE 05",
           "durationMs": 0,
           "status": "running",
           "details": "Mapping use-case for Marcus Aurelius",
-          "timestamp": "2026-06-20T09:33:59.424919"
+          "timestamp": "2026-06-20T09:41:09.770958"
         },
         {
           "stage": "STAGE 05",
-          "durationMs": 1.198,
+          "durationMs": 1.029,
           "status": "done",
           "details": "Matched primary use case: automating eligibility verification",
-          "timestamp": "2026-06-20T09:33:59.426123"
+          "timestamp": "2026-06-20T09:41:09.771991"
         },
         {
           "stage": "STAGE 06",
           "durationMs": 0,
           "status": "running",
           "details": "Drafting outreach messages for Jordan Lee",
-          "timestamp": "2026-06-20T09:33:59.426137"
+          "timestamp": "2026-06-20T09:41:09.771999"
         },
         {
           "stage": "STAGE 07",
           "durationMs": 0,
           "status": "running",
           "details": "Safety and compliance audit for Jordan Lee (attempt 1)",
-          "timestamp": "2026-06-20T09:33:59.427205"
+          "timestamp": "2026-06-20T09:41:09.773045"
         },
         {
           "stage": "STAGE 07",
-          "durationMs": 0.894,
+          "durationMs": 0.8809999999999999,
           "status": "done",
           "details": "Outreach approved for Jordan Lee.",
-          "timestamp": "2026-06-20T09:33:59.428104"
+          "timestamp": "2026-06-20T09:41:09.773931"
         },
         {
           "stage": "STAGE 06",
-          "durationMs": 1.967,
+          "durationMs": 1.933,
           "status": "done",
           "details": "Successfully drafted all outreach variants for Jordan Lee.",
-          "timestamp": "2026-06-20T09:33:59.428108"
+          "timestamp": "2026-06-20T09:41:09.773935"
         },
         {
           "stage": "STAGE 06",
           "durationMs": 0,
           "status": "running",
           "details": "Drafting outreach messages for Sarah Connor",
-          "timestamp": "2026-06-20T09:33:59.428111"
+          "timestamp": "2026-06-20T09:41:09.773937"
         },
         {
           "stage": "STAGE 07",
           "durationMs": 0,
           "status": "running",
           "details": "Safety and compliance audit for Sarah Connor (attempt 1)",
-          "timestamp": "2026-06-20T09:33:59.429038"
+          "timestamp": "2026-06-20T09:41:09.774941"
         },
         {
           "stage": "STAGE 07",
-          "durationMs": 0.896,
+          "durationMs": 0.506,
           "status": "done",
           "details": "Outreach approved for Sarah Connor.",
-          "timestamp": "2026-06-20T09:33:59.429949"
+          "timestamp": "2026-06-20T09:41:09.775455"
         },
         {
           "stage": "STAGE 06",
-          "durationMs": 1.841,
+          "durationMs": 1.518,
           "status": "done",
           "details": "Successfully drafted all outreach variants for Sarah Connor.",
-          "timestamp": "2026-06-20T09:33:59.429954"
+          "timestamp": "2026-06-20T09:41:09.775458"
         },
         {
           "stage": "STAGE 06",
           "durationMs": 0,
           "status": "running",
           "details": "Drafting outreach messages for Robert Vance",
-          "timestamp": "2026-06-20T09:33:59.429956"
+          "timestamp": "2026-06-20T09:41:09.775459"
         },
         {
           "stage": "STAGE 07",
           "durationMs": 0,
           "status": "running",
           "details": "Safety and compliance audit for Robert Vance (attempt 1)",
-          "timestamp": "2026-06-20T09:33:59.430507"
+          "timestamp": "2026-06-20T09:41:09.775922"
         },
         {
           "stage": "STAGE 07",
-          "durationMs": 0.442,
+          "durationMs": 0.416,
           "status": "done",
           "details": "Outreach approved for Robert Vance.",
-          "timestamp": "2026-06-20T09:33:59.430952"
+          "timestamp": "2026-06-20T09:41:09.776341"
         },
         {
           "stage": "STAGE 06",
-          "durationMs": 0.998,
+          "durationMs": 0.882,
           "status": "done",
           "details": "Successfully drafted all outreach variants for Robert Vance.",
-          "timestamp": "2026-06-20T09:33:59.430954"
+          "timestamp": "2026-06-20T09:41:09.776343"
         },
         {
           "stage": "STAGE 06",
           "durationMs": 0,
           "status": "running",
           "details": "Drafting outreach messages for Elena Rostova",
-          "timestamp": "2026-06-20T09:33:59.430955"
+          "timestamp": "2026-06-20T09:41:09.776344"
         },
         {
           "stage": "STAGE 07",
           "durationMs": 0,
           "status": "running",
           "details": "Safety and compliance audit for Elena Rostova (attempt 1)",
-          "timestamp": "2026-06-20T09:33:59.432785"
+          "timestamp": "2026-06-20T09:41:09.776771"
         },
         {
           "stage": "STAGE 07",
-          "durationMs": 0.435,
+          "durationMs": 0.419,
           "status": "done",
           "details": "Outreach approved for Elena Rostova.",
-          "timestamp": "2026-06-20T09:33:59.433222"
+          "timestamp": "2026-06-20T09:41:09.777192"
         },
         {
           "stage": "STAGE 06",
-          "durationMs": 2.267,
+          "durationMs": 0.848,
           "status": "done",
           "details": "Successfully drafted all outreach variants for Elena Rostova.",
-          "timestamp": "2026-06-20T09:33:59.433223"
+          "timestamp": "2026-06-20T09:41:09.777194"
         },
         {
           "stage": "STAGE 06",
           "durationMs": 0,
           "status": "running",
           "details": "Drafting outreach messages for Marcus Aurelius",
-          "timestamp": "2026-06-20T09:33:59.433225"
+          "timestamp": "2026-06-20T09:41:09.777195"
         },
         {
           "stage": "STAGE 07",
           "durationMs": 0,
           "status": "running",
           "details": "Safety and compliance audit for Marcus Aurelius (attempt 1)",
-          "timestamp": "2026-06-20T09:33:59.433669"
+          "timestamp": "2026-06-20T09:41:09.777627"
         },
         {
           "stage": "STAGE 07",
-          "durationMs": 0.428,
+          "durationMs": 0.40099999999999997,
           "status": "done",
           "details": "Outreach approved for Marcus Aurelius.",
-          "timestamp": "2026-06-20T09:33:59.434099"
+          "timestamp": "2026-06-20T09:41:09.778031"
         },
         {
           "stage": "STAGE 06",
-          "durationMs": 0.875,
+          "durationMs": 0.837,
           "status": "done",
           "details": "Successfully drafted all outreach variants for Marcus Aurelius.",
-          "timestamp": "2026-06-20T09:33:59.434101"
+          "timestamp": "2026-06-20T09:41:09.778033"
         }
       ],
-      "started_at": "2026-06-20T09:33:50.424128",
-      "completed_at": "2026-06-20T09:33:59.434102"
+      "started_at": "2026-06-20T09:40:57.786891",
+      "completed_at": "2026-06-20T09:41:09.778034"
     }
   ],
   "prospects": [
@@ -1047,9 +1047,9 @@
           "wordCount": 53
         }
       },
-      "id": "db09933d-c6ed-4324-a2a0-c2ec4dd7d859",
+      "id": "02712ca6-81a7-4642-a354-44c68d080add",
       "run_date": "2026-06-20",
-      "created_at": "2026-06-20T09:33:59.434232"
+      "created_at": "2026-06-20T09:41:09.778234"
     },
     {
       "name": "Sarah Connor",
@@ -1093,9 +1093,9 @@
           "wordCount": 35
         }
       },
-      "id": "3ced1a17-89ca-45c9-86c3-fa209b17779b",
+      "id": "5bc2463d-135a-47a6-838d-cb0ab73403cc",
       "run_date": "2026-06-20",
-      "created_at": "2026-06-20T09:33:59.434917"
+      "created_at": "2026-06-20T09:41:09.779203"
     },
     {
       "name": "Robert Vance",
@@ -1139,9 +1139,9 @@
           "wordCount": 30
         }
       },
-      "id": "99e7da04-be09-4edc-bffa-d71620989db0",
+      "id": "0245e528-d1ff-4ec7-920a-0b5527acae28",
       "run_date": "2026-06-20",
-      "created_at": "2026-06-20T09:33:59.435706"
+      "created_at": "2026-06-20T09:41:09.780295"
     },
     {
       "name": "Elena Rostova",
@@ -1185,9 +1185,9 @@
           "wordCount": 32
         }
       },
-      "id": "175222ae-e16b-4a79-b020-032d21a67b29",
+      "id": "a773583b-5dd6-49d1-8bd2-e30343cec88b",
       "run_date": "2026-06-20",
-      "created_at": "2026-06-20T09:33:59.436219"
+      "created_at": "2026-06-20T09:41:09.781089"
     },
     {
       "name": "Marcus Aurelius",
@@ -1231,9 +1231,9 @@
           "wordCount": 27
         }
       },
-      "id": "838db9e5-59f9-458b-b61c-9a9e779f73ee",
+      "id": "f0c61835-6d86-4b9c-bcac-4e5b81ee7fc6",
       "run_date": "2026-06-20",
-      "created_at": "2026-06-20T09:33:59.436714"
+      "created_at": "2026-06-20T09:41:09.783011"
     }
   ],
   "dedup_index": [],
