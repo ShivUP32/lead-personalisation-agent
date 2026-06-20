@@ -50,23 +50,40 @@ class ScheduleRequest(BaseModel):
     time: str
     email: str
 
+def verify_ui_auth(request: Request, authorization: Optional[str] = None):
+    # Bypass checks for local development
+    host = request.headers.get("host", "")
+    is_local = "localhost" in host or "127.0.0.1" in host
+    if is_local:
+        return
+        
+    workspace_passcode = os.getenv("WORKSPACE_PASSCODE")
+    cron_secret = os.getenv("CRON_SECRET")
+    
+    # 1. If user configured a custom UI/Workspace passcode, strictly enforce it
+    if workspace_passcode:
+        expected = f"Bearer {workspace_passcode.strip()}"
+        if authorization != expected:
+            # Also allow Vercel cron secret to bypass (in case of automated calls)
+            if cron_secret and authorization == f"Bearer {cron_secret.strip()}":
+                return
+            raise HTTPException(status_code=401, detail="Unauthorized: Invalid workspace passcode.")
+            
+    # 2. If no custom passcode is configured, we allow the UI to call it without passcode,
+    # but we still validate if they passed an invalid authorization token.
+    elif cron_secret:
+        if authorization:
+            expected = f"Bearer {cron_secret.strip()}"
+            if authorization != expected:
+                raise HTTPException(status_code=401, detail="Unauthorized: Invalid token.")
+
 @app.post("/api/run-pipeline")
 async def api_run_pipeline(
     req: RunPipelineRequest,
     request: Request,
     authorization: Optional[str] = Header(None)
 ):
-    # Security check if CRON_SECRET is set
-    cron_secret = os.getenv("CRON_SECRET")
-    if cron_secret:
-        # Bypass authorization checks for local development/testing
-        host = request.headers.get("host", "")
-        is_local = "localhost" in host or "127.0.0.1" in host
-        
-        if not is_local or authorization:
-            expected = f"Bearer {cron_secret}"
-            if authorization != expected:
-                raise HTTPException(status_code=401, detail="Unauthorized")
+    verify_ui_auth(request, authorization)
             
     try:
         result = await run_pipeline(
@@ -181,13 +198,10 @@ def api_get_schedule():
 @app.post("/api/schedule")
 def api_save_schedule(
     req: ScheduleRequest,
+    request: Request,
     authorization: Optional[str] = Header(None)
 ):
-    cron_secret = os.getenv("CRON_SECRET")
-    if cron_secret:
-        expected = f"Bearer {cron_secret}"
-        if authorization != expected:
-            raise HTTPException(status_code=401, detail="Unauthorized")
+    verify_ui_auth(request, authorization)
             
     try:
         schedule_data = {
